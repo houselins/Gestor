@@ -17,6 +17,7 @@ public class Nodo {
     private Nodo lLink;
 
     public Nodo() {
+        //habia una vez un barquito chiquitito
     }
     
 }
