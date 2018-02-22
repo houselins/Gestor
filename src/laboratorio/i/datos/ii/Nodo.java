@@ -11,15 +11,18 @@ package laboratorio.i.datos.ii;
  */
 public class Nodo {
     
-    Boolean Paquete;//si es un paquete va a ser verdadero
+    Boolean paquete;//si es un paquete va a ser verdadero
     private String nombre;
     private String data;
     private Nodo rLink;
     private Nodo lLink;
 
-    public Nodo(String nombre) {
+    public Nodo(String nombre, Boolean paquete) {
         this.nombre = nombre;
+        this.paquete=paquete;
+        this.data=data;
     }
+    
     /*
     void add(int i) {
         Nodo temp=this,ant=null;
@@ -41,9 +44,9 @@ public class Nodo {
     */
     void add(String nombre, Boolean paquete){
         if (paquete) {
-            this.ultPaquete().lLink=new Nodo(nombre);
+            this.ultPaquete().lLink=new Nodo(nombre, true);
         }else{
-            
+            this.ultEntregable().rLink=new Nodo(nombre, false);
         }
         
     }
@@ -54,5 +57,19 @@ public class Nodo {
         }
         return p;
     }
-    
+    private Nodo buscarPaquete(String nombre, Nodo p){
+        if (p.nombre.equals(nombre)) {
+            return p;
+        }else{
+            buscarPaquete(nombre, p.lLink);
+        }
+        return null;
+    }
+    private Nodo ultEntregable(){
+        Nodo p=this;
+        while(p.rLink != null){
+            p=p.rLink;
+        }
+        return p;
+    }
 }
