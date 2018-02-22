@@ -9,13 +9,12 @@ package laboratorio.i.datos.ii;
  *
  * @author ofortich
  */
-public class Gestor {
+public class Usuario {
+    private String name;
+    private String password;
+    private String nick;
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        
+    public Usuario() {
     }
     
 }

@@ -9,13 +9,14 @@ package laboratorio.i.datos.ii;
  *
  * @author ofortich
  */
-public class Gestor {
+public class Nodo {
+    
+    
+    private String data;
+    private Nodo rLink;
+    private Nodo lLink;
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        
+    public Nodo() {
     }
     
 }
